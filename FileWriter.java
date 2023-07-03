@@ -6,8 +6,14 @@ class FileWrite {
     		writer.write(str);
     
     		writer.close();
-}
-
+	}
+	private void writeToPosition(String filename, int data, long position) 
+  		throws IOException {
+    		RandomAccessFile writer = new RandomAccessFile(filename, "rw");
+    		writer.seek(position);
+    		writer.writeInt(data);
+   		writer.close();
+	}
 
 
 }
